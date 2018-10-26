@@ -32,4 +32,4 @@ def to_dropbox(dataframe, path, token):
 
 dataframe = read_overall_stats()
 print dataframe
-#to_dropbox(dataframe, "/data.csv", db_token)
+to_dropbox(dataframe, "/data.csv", db_token)
