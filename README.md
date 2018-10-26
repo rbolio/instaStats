@@ -25,4 +25,4 @@ user_data = [["usr_1", "pwd_1"],
 ```
 
 -----
-### Good Luck!
+### Hope it helps!
