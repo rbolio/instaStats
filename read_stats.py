@@ -41,5 +41,5 @@ def all_files_upload():
 
 
 if __name__ == '__main__':
-    # run()  # runs the 'Get stats' code
+    run()  # runs the 'Get stats' code
     all_files_upload()
