@@ -26,6 +26,7 @@ def upload_to_dropbox(dataframe, path, token):
 
 
 def all_files_upload():
+    """Gets files from stats folder and uploads them sends them to dropbox function"""
     file_data_path = './stats/'
     file_list = [f for f in listdir(file_data_path) if isfile(join(file_data_path, f))]
     for individual_file in file_list:
@@ -38,5 +39,5 @@ def all_files_upload():
 
 
 if __name__ == '__main__':
-    # run()  # runs the 'Get stats' code
+    run()  # runs the 'Get stats' code
     all_files_upload()
