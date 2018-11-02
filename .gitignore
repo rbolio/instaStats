@@ -119,3 +119,6 @@ accounts.py
 
 #pycharm
 .idea/
+
+#security
+*.csv
