@@ -10,7 +10,9 @@ from get_stats import run
 
 def read_overall_stats(filename):
     """Reads csv file and returns it as a pandas data frame"""
-    return pandas.read_csv(".\\stats\\" + filename, parse_dates=['DATE'])
+    pandas_df = pandas.read_csv(".\\stats\\" + filename, parse_dates=['DATE'])
+    print pandas_df
+    return pandas_df
 
 
 def upload_to_dropbox(dataframe, path, token):
@@ -39,5 +41,5 @@ def all_files_upload():
 
 
 if __name__ == '__main__':
-    run()  # runs the 'Get stats' code
+    # run()  # runs the 'Get stats' code
     all_files_upload()
