@@ -115,7 +115,7 @@ dmypy.json
 
 #security ignore
 accounts.py
-./stats/*
+stats/*
 
 #pycharm
 .idea/
