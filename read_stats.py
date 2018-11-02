@@ -1,5 +1,6 @@
+"""Module to read Instagram statistics and upload them to Dropbox for safekeeping"""
+
 import pandas
-import glob
 import dropbox
 from accounts import token as db_token
 from os import listdir
@@ -8,12 +9,15 @@ from get_stats import run
 
 
 def read_overall_stats(filename):
-    return pandas.read_csv(".\\stats\\" + filename, parse_dates=['DATE'])
+    """Reads csv file and returns it as a pandas data frame"""
+    pandas_df = pandas.read_csv(".\\stats\\" + filename, parse_dates=['DATE'])
+    print pandas_df
+    return pandas_df
 
 
 def upload_to_dropbox(dataframe, path, token):
+    """uploads pandas dataframe to dropbox as csv"""
     dbx = dropbox.Dropbox(token)
-
     df_string = dataframe.to_csv(index=False)
     db_bytes = bytes(df_string)
     dbx.files_upload(
@@ -24,6 +28,7 @@ def upload_to_dropbox(dataframe, path, token):
 
 
 def all_files_upload():
+    """Gets files from stats folder and uploads them sends them to dropbox function"""
     file_data_path = './stats/'
     file_list = [f for f in listdir(file_data_path) if isfile(join(file_data_path, f))]
     for individual_file in file_list:
